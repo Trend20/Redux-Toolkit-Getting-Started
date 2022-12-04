@@ -39,3 +39,32 @@ const store = configureStore({
   reducer: {}
 })
 ```
+
+This create the Redux store and automatically configure the Redux DevTools extension on the browser so that you can inspect the application while developing.
+
+### Provide the Redux Store to the react application
+
+```
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+<!--
+  In the main entry file of the application i.e index.js in react apps
+  import the store as a named export and the Provider from react-redux
+-->
+import { store } from './redux/store.js'
+import { Provider } from 'react-redux';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+)
+
+```
+
+### Slices
+
+These are portions of Redux code that is responsible for managing specific set of data and actions within the Redux Store.
+A slice reducer is a reducer that is responsible for handling actions and updating the data for a given slice.
