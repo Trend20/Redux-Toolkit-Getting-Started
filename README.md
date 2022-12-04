@@ -68,3 +68,39 @@ ReactDOM.render(
 
 These are portions of Redux code that is responsible for managing specific set of data and actions within the Redux Store.
 A slice reducer is a reducer that is responsible for handling actions and updating the data for a given slice.
+
+Creating a slice require 3 main constraints, a string name to identify the slice, an initial state value, and one or more reducer functions to define how the state can be updated.
+
+### Creating counter slice as an example
+
+```
+ <!-- import createSlice from redux-toolkit -->
+
+ import { createSlice } from '@reduxjs/toolkit';
+
+ <!-- declare initial state -->
+
+ const initialState = {
+  value: 0
+ }
+
+export const counterSlice = createSlice({
+  name: 'counter',
+  initialState,
+  reducers: {
+    increment: (state) => {
+      state.value += 1;
+    },
+    decrement: (state) =>{
+      state.value -= 1;
+    },
+    incrementByAmount: (state, action) =>{
+      state.value += action.payload
+    },
+  },
+})
+
+export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export default counterSlice.reducer
+
+```
