@@ -1,13 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import productList from "../data/product.json";
-import { cartSlice } from "../data/cartSlice";
+import { addToCart, removeFromCart } from "../data/cartSlice";
 import "../styles/home.scss";
 
 const Home = () => {
   const { cartProductIds } = useSelector((state) => state.cart);
 
   // import the cart actions
-  const { addToCart, removeFromCart } = cartSlice.actions;
   const dispatch = useDispatch();
 
   return (
