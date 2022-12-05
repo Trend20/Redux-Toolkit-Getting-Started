@@ -30,6 +30,11 @@ The store is where we keep the application state(application data).
 
 The store works together with the reducers and actions. Actions tell reducers how to interact with the store and the store allows reducers to access the data in it and perform the actions.
 
+### To get started using Redux-Toolkit, first install the dependencies using npm or yarn:
+``` yarn add @reduxjs/toolkit react-redux ```
+
+``` npm install @reduxjs/toolkit react-redux ```
+
 To create a store, we have to import configure store from @reduxjs/toolkit.
 
 ```
